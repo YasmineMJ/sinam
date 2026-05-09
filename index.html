@@ -52,11 +52,12 @@
             background-position: center;
         }
         .h-12 {
-            margin: 0px 90px !important;
-            width: 350px !important;
-            height: 100px !important;
+            margin: 5px 90px !important;
+            height: 75px !important;
         }
-
+        .text-6xl {
+            font-size: 2.75rem !important;
+        }
         .bg-calcium {
             background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), 
                               url('https://images.unsplash.com/photo-1517089535819-3d84241da99d?auto=format&fit=crop&q=80&w=2070');
@@ -117,6 +118,9 @@
         .max-w-xl
         {
             max-width: 42rem !important;
+        }
+        .bg-white.p-12.rounded-sm.shadow-2xl {
+            color: black;
         }
     </style>
 </head>
@@ -312,7 +316,7 @@
             </div>
         </div>
     </section>
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- Contact Section -->
     <section id="contact" class="full-section bg-sinamBlue text-white">
         <div class="grid md:grid-cols-2 gap-20 w-full">
@@ -342,31 +346,33 @@
             </div>
             
             <div class="bg-white p-12 rounded-sm shadow-2xl">
-                <form id="contact-form" action="https://formspree.io/f/your_formspree_id" method="POST" class="space-y-6">
-                    <div class="grid grid-cols-2 gap-6">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="space-y-2">
-                            <label class="text-[10px] uppercase font-bold text-sinamBlue tracking-widest">Full Name</label>
-                            <input type="text" name="name" required class="w-full bg-slate-50 border-b-2 border-slate-200 py-3 focus:outline-none focus:border-sinamGold text-slate-800">
+                            <label class="text-xs font-bold uppercase text-[#0a1442]">Your Name</label>
+                            <input type="text" id="user_name" name="user_name" required class="w-full p-4 bg-slate-50 border-b-2 border-slate-200 focus:border-[#e5b317] outline-none">
                         </div>
                         <div class="space-y-2">
-                            <label class="text-[10px] uppercase font-bold text-sinamBlue tracking-widest">Company</label>
-                            <input type="text" name="company" class="w-full bg-slate-50 border-b-2 border-slate-200 py-3 focus:outline-none focus:border-sinamGold text-slate-800">
+                            <label class="text-xs font-bold uppercase text-[#0a1442]">Company Name</label>
+                            <input type="text" id="user_company" name="user_company" class="w-full p-4 bg-slate-50 border-b-2 border-slate-200 focus:border-[#e5b317] outline-none">
                         </div>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-[10px] uppercase font-bold text-sinamBlue tracking-widest">Email Address</label>
-                        <input type="email" name="email" required class="w-full bg-slate-50 border-b-2 border-slate-200 py-3 focus:outline-none focus:border-sinamGold text-slate-800">
-                    </div>
-                    <div class="space-y-2">
-                        <label class="text-[10px] uppercase font-bold text-sinamBlue tracking-widest">Your Message</label>
-                        <textarea name="message" required rows="3" class="w-full bg-slate-50 border-b-2 border-slate-200 py-3 focus:outline-none focus:border-sinamGold text-slate-800"></textarea>
                     </div>
                     
-                    <button type="submit" id="submit-btn" class="w-full bg-sinamBlue text-sinamGold font-bold py-6 hover:bg-sinamBlue/90 transition-all uppercase tracking-[0.2em] flex items-center justify-center shadow-xl">
-                        <span id="btn-text">Send Inquiry</span>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase text-[#0a1442]">Email Address</label>
+                        <input type="email" id="user_email" name="user_email" required class="w-full p-4 bg-slate-50 border-b-2 border-slate-200 focus:border-[#e5b317] outline-none">
+                    </div>
+    
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase text-[#0a1442]">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full p-4 bg-slate-50 border-b-2 border-slate-200 focus:border-[#e5b317] outline-none"></textarea>
+                    </div>
+    
+                    <button type="submit" id="submit-btn" class="w-full bg-[#0a1442] text-[#e5b317] font-bold py-5 uppercase tracking-widest hover:bg-[#15235a] transition-all">
+                        Send Message
                     </button>
                     
-                    <div id="form-status" class="hidden text-center p-4 rounded-sm font-bold text-xs uppercase tracking-widest"></div>
+                    <p id="status-message" class="hidden text-center font-bold text-sm uppercase tracking-tighter mt-4"></p>
                 </form>
             </div>
         </div>
@@ -374,8 +380,7 @@
 
     <footer class="bg-[#050b26] py-16 text-white/50 text-center border-t border-white/5">
         <div class="mb-8 flex flex-col items-center">
-            <img src="Untitled(2).jpg" alt="Sinam Global" class="h-12 mb-4 opacity-80 brightness-150">
-            <p class="text-sm font-bold text-white tracking-[0.3em] uppercase">Trading • Mining • Manufacturing</p>
+            <img src="Untitled(2).png" alt="Sinam Global" class="h-12 mb-4 opacity-80 brightness-150">
         </div>
         <div class="max-w-xl mx-auto border-t border-white/10 pt-8">
             <p class="text-xs">&copy; 2026 Sinam Global LLC. Sultanate of Oman.</p>
@@ -383,7 +388,7 @@
         </div>
     </footer>
 
-    <script>
+    <script type="text/javascript">
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -405,43 +410,40 @@
         });
 
         // Contact Form Handling
+        (function(){
+            // Replace with your actual Public Key from EmailJS Account
+            emailjs.init("AeXEDJTkP7H7ZoUiV");
+        })();
+
         const contactForm = document.getElementById('contact-form');
+        const statusMsg = document.getElementById('status-message');
         const submitBtn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
-        const statusDiv = document.getElementById('form-status');
 
-        contactForm.onsubmit = async (e) => {
-            e.preventDefault();
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Visual feedback
             submitBtn.disabled = true;
-            btnText.innerHTML = '<span class="spinner"></span> Processing...';
-            statusDiv.classList.add('hidden');
+            submitBtn.innerText = "SENDING...";
 
-            const formData = new FormData(contactForm);
-
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
-                });
-
-                if (response.ok) {
-                    statusDiv.textContent = "INQUIRY SENT SUCCESSFULLY. WE WILL CONTACT YOU SOON.";
-                    statusDiv.className = "text-center p-4 rounded-sm font-bold text-xs uppercase tracking-widest bg-sinamGold/20 text-sinamGold border border-sinamGold/50";
-                    statusDiv.classList.remove('hidden');
+            // These IDs must match your EmailJS Template
+            emailjs.sendForm('service_ic4cg61', 'template_9s2fzwr', this)
+                .then(function() {
+                    statusMsg.innerText = "SUCCESS! MESSAGE SENT TO INFO@SINAMGLOBAL.COM";
+                    statusMsg.classList.remove('hidden', 'text-red-600');
+                    statusMsg.classList.add('text-green-600');
                     contactForm.reset();
-                } else {
-                    throw new Error();
-                }
-            } catch (error) {
-                statusDiv.textContent = "ERROR SENDING MESSAGE. PLEASE TRY AGAIN LATER.";
-                statusDiv.className = "text-center p-4 rounded-sm font-bold text-xs uppercase tracking-widest bg-red-900/20 text-red-400 border border-red-900/50";
-                statusDiv.classList.remove('hidden');
-            } finally {
-                submitBtn.disabled = false;
-                btnText.textContent = "Send Inquiry";
-            }
-        };
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "SEND MESSAGE";
+                }, function(error) {
+                    statusMsg.innerText = "FAILED TO SEND. PLEASE TRY AGAIN.";
+                    statusMsg.classList.remove('hidden', 'text-green-600');
+                    statusMsg.classList.add('text-red-600');
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "SEND MESSAGE";
+                    console.log('FAILED...', error);
+                });
+        });
     </script>
 </body>
 </html>
