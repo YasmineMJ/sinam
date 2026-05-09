@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinam Global | Trading, Mining & Manufacturing</title>
+    <!-- Modern Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sinamBlue: '#0a1442',
+                        sinamGold: '#e5b317',
+                        sinamSlate: '#1a2e35'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --primary: #0a1442;
+            --accent:  rgb(213 171 31);
+            --light: #f8f9fa;
+        }
+        
+        body {
+            
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .full-section {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 5rem 5%;
+        }
+
+        .bg-mineral {
+            background-image: linear-gradient(rgba(10, 20, 66, 0.9), rgba(10, 20, 66, 0.8)), 
+                              url('https://static.vecteezy.com/system/resources/previews/054/882/965/large_2x/white-limestone-rocks-shining-under-the-sun-with-blue-sky-and-clouds-photo.jpg');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        .h-12 {
+            margin: 0px 90px !important;
+            width: 350px !important;
+            height: 100px !important;
+        }
+
+        .bg-calcium {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), 
+                              url('https://images.unsplash.com/photo-1517089535819-3d84241da99d?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .material-card {
+            transition: all 0.3s ease;
+            overflow: hidden;
+            border-bottom: 3px solid transparent;
+        }
+
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(10, 20, 66, 0.1);
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width .3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .px-6 {
+            padding-right: 6.5rem !important;
+        }
+
+        .spinner {
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 2px solid #fff;
+            width: 16px;
+            height: 16px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @media (min-width: 768px) {
+            .md\:text-8xl {
+                font-size: 5rem !important;
+            }
+        }
+        .max-w-4xl {
+            max-width: 85rem !important;
+        }
+        .max-w-xl
+        {
+            max-width: 42rem !important;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 px-6 py-3 flex justify-between items-center shadow-sm">
+        <div class="flex items-center">
+            <img src="Untitled(2).png" alt="Sinam Global Logo" class="h-12 md:h-14 object-contain">
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest text-sinamBlue">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#materials" class="nav-link">Materials</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="full-section bg-mineral text-white">
+        <div class="max-w-4xl">
+            <h4 class="text-sinamGold font-bold tracking-[0.4em] uppercase mb-4 text-sm">Sultanate of Oman</h4>
+            <h1 class="text-6xl md:text-8xl mb-6 leading-tight">Advanced Mineral <br><span class="text-sinamGold italic text-5xl md:text-7xl">& Raw Material</span> </br>Sourcing and Manufacturing.</h1>
+            <p class="text-xl text-slate-200 max-w-2xl mb-10 leading-relaxed font-light">
+                A dedicated sourcing and manufacturing partner connecting industrial leaders to high-grade resources across East Asia, Africa, and the Middle East.
+            </p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#materials" class="bg-sinamGold text-sinamBlue px-10 py-4 font-bold rounded-sm hover:brightness-110 transition-all shadow-lg">View Materials</a>
+                <a href="#contact" class="border-2 border-white/40 text-white px-10 py-4 font-bold rounded-sm hover:bg-white/10 transition-colors">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="full-section bg-white">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+                <img src="raysut.jpg" alt="Mineral Piles" class="rounded-lg shadow-2xl w-full h-[600px] object-cover">
+                <div class="absolute -bottom-8 -right-8 bg-sinamBlue p-12 hidden lg:block border-r-8 border-sinamGold shadow-2xl">
+                    <p class="text-sinamGold font-bold text-5xl">5+</p>
+                    <p class="text-white uppercase tracking-widest text-xs mt-2 font-semibold">Years of Expertise</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-5xl mb-8 text-sinamBlue">Rooted in Expertise. <br>Driven by Strategy.</h2>
+                <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                    Based in Salalah, Sinam Global LLC is a premier trading, mining, and manufacturing firm. We serve as a bridge between industrial manufacturing and high-grade mineral extraction.
+                </p>
+                <p class="text-slate-500 mb-8 italic border-l-4 border-sinamGold pl-6">
+                    "Helping paints, plastics, agricultural, and construction companies access the most efficient and economical raw material alternatives through our global sourcing network."
+                </p>
+                <div class="grid grid-cols-2 gap-6 pt-6 border-t border-slate-100">
+                    <div>
+                        <h4 class="font-bold text-sinamBlue mb-2 uppercase tracking-tighter">Registration</h4>
+                        <p class="text-sm text-slate-500 font-medium">CR No: 1653124<br>OCCI No: 2094274</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="full-section bg-slate-50">
+        <div class="w-full">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl text-sinamBlue mb-4">Core Competencies</h2>
+                <div class="w-24 h-1 bg-sinamGold mx-auto mb-6"></div>
+                <p class="text-slate-500 uppercase tracking-widest text-sm font-semibold">Industrial Solutions & Sourcing</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-12 border-t-4 border-sinamBlue shadow-sm group hover:shadow-xl transition-shadow">
+                    <div class="mb-6 text-sinamGold">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-2xl mb-4 text-sinamBlue font-bold">Mineral Supply</h3>
+                    <p class="text-slate-600">Reliable supply of industrial minerals,  including plastic resins, fillers, masterbatch, high-purity Calcium Carbonates, Titanium Dioxide and Clays.</p>
+                </div>
+                <div class="bg-white p-12 border-t-4 border-sinamGold shadow-sm group hover:shadow-xl transition-shadow">
+                    <div class="mb-6 text-sinamBlue">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                    </div>
+                    <h3 class="text-2xl mb-4 text-sinamBlue font-bold">Strategic Consulting</h3>
+                    <p class="text-slate-600">Advisory on material alternatives and cost optimization, ensuring compatibility with your processes.</p>
+                </div>
+                <div class="bg-white p-12 border-t-4 border-sinamBlue shadow-sm group hover:shadow-xl transition-shadow">
+                    <div class="mb-6 text-sinamGold">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </div>
+                    <h3 class="text-2xl mb-4 text-sinamBlue font-bold">Machinery Support</h3>
+                    <p class="text-slate-600">Recommending machinery alternatives based on material characteristics and production needs to optimize your factory output.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section id="materials" class="full-section bg-calcium">
+        <div class="w-full">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl text-sinamBlue mb-4">Materials We Supply</h2>
+                <p class="text-slate-600 max-w-xl mx-auto">High-purity earth raw materials and industrial inputs for the global manufacturing sector.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Calcium Carbonate -->
+                <div class="material-card bg-white h-[420px] flex flex-col group shadow-lg">
+                    <div class="h-64 overflow-hidden">
+                        <img src="calcuim.jpg" alt="Calcium Carbonate" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sinamGold text-xs font-bold uppercase mb-2 tracking-widest">Minerals</div>
+                        <h4 class="text-xl font-bold mb-2 text-sinamBlue">Calcium Carbonates</h4>
+                        <p class="text-sm text-slate-500">Processed minerals including high-purity clays and titanium dioxide.</p>
+                    </div>
+                </div>
+
+                <!-- Polymers -->
+                <div class="material-card bg-white h-[420px] flex flex-col group shadow-lg">
+                    <div class="h-64 overflow-hidden">
+                        <img src="pphd.jpg" alt="Polymers" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sinamGold text-xs font-bold uppercase mb-2 tracking-widest">Plastics</div>
+                        <h4 class="text-xl font-bold mb-2 text-sinamBlue">PE, PP & HDPE</h4>
+                        <p class="text-sm text-slate-500">Essential resins for high-impact plastic manufacturing and molding.</p>
+                    </div>
+                </div>
+
+                <!-- Masterbatch -->
+                <div class="material-card bg-white h-[420px] flex flex-col group shadow-lg">
+                    <div class="h-64 overflow-hidden">
+                        <img src="masterbatch.jpg" alt="Masterbatch" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sinamGold text-xs font-bold uppercase mb-2 tracking-widest">Additives</div>
+                        <h4 class="text-xl font-bold mb-2 text-sinamBlue">Masterbatch</h4>
+                        <p class="text-sm text-slate-500">Concentrated pigment and additive solutions for color accuracy.</p>
+                    </div>
+                </div>
+
+                <!-- Fillers -->
+                <div class="material-card bg-white h-[420px] flex flex-col group shadow-lg">
+                    <div class="h-64 overflow-hidden">
+                        <img src="filler.jpg" alt="Fillers" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sinamGold text-xs font-bold uppercase mb-2 tracking-widest">Optimization</div>
+                        <h4 class="text-xl font-bold mb-2 text-sinamBlue">Industrial Fillers</h4>
+                        <p class="text-sm text-slate-500">Performance-enhancing materials to optimize cost and durability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="py-24 bg-white px-[5%] border-t border-slate-50">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-5xl text-sinamBlue mb-8">Industries We Serve</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4 p-5 border-l-4 border-sinamGold bg-slate-50 group hover:bg-sinamBlue transition-colors">
+                        <span class="font-bold text-sinamGold group-hover:text-white">01</span>
+                        <span class="text-lg font-bold text-sinamBlue group-hover:text-white">Paint & Coating Manufacturers</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-5 border-l-4 border-sinamBlue bg-slate-50 group hover:bg-sinamBlue transition-colors">
+                        <span class="font-bold text-sinamBlue group-hover:text-white">02</span>
+                        <span class="text-lg font-bold text-sinamBlue group-hover:text-white">Plastic & Polymer Industries</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-5 border-l-4 border-sinamGold bg-slate-50 group hover:bg-sinamBlue transition-colors">
+                        <span class="font-bold text-sinamGold group-hover:text-white">03</span>
+                        <span class="text-lg font-bold text-sinamBlue group-hover:text-white">Agricultural Product Producers</span>
+                    </div>
+                    <div class="flex items-center space-x-4 p-5 border-l-4 border-sinamBlue bg-slate-50 group hover:bg-sinamBlue transition-colors">
+                        <span class="font-bold text-sinamBlue group-hover:text-white">04</span>
+                        <span class="text-lg font-bold text-sinamBlue group-hover:text-white">Construction Material Factories</span>
+                    </div>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="h-48 rounded-lg overflow-hidden border-2 border-sinamBlue/5">
+                    <img src="paints.jpg" class="w-full h-full object-cover">
+                </div>
+                <div class="h-48 rounded-lg overflow-hidden mt-8 border-2 border-sinamGold/5">
+                    <img src="plastic.jpeg" class="w-full h-full object-cover">
+                </div>
+                <div class="h-48 rounded-lg overflow-hidden -mt-8 border-2 border-sinamGold/5">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover">
+                </div>
+                <div class="h-48 rounded-lg overflow-hidden border-2 border-sinamBlue/5">
+                    <img src="paint.jpg" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="full-section bg-sinamBlue text-white">
+        <div class="grid md:grid-cols-2 gap-20 w-full">
+            <div>
+                <h2 class="text-6xl text-white mb-8 leading-tight">Start Your <br><span class="text-sinamGold italic">Sourcing</span> Journey.</h2>
+                <p class="text-xl text-slate-300 mb-12">Connect with our advisory team in Salalah to discuss your material requirements.</p>
+                <div class="space-y-8">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-14 h-14 rounded-sm bg-sinamGold flex items-center justify-center text-sinamBlue shadow-lg">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sinamGold text-xs uppercase tracking-widest font-bold">Call Us</p>
+                            <span class="text-2xl font-bold">+968 9060 3355</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-6">
+                        <div class="w-14 h-14 rounded-sm bg-sinamGold flex items-center justify-center text-sinamBlue shadow-lg">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <div>
+                            <p class="text-sinamGold text-xs uppercase tracking-widest font-bold">Email Inquiries</p>
+                            <span class="text-2xl font-bold">Info@sinamglobal.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white p-12 rounded-sm shadow-2xl">
+                <form id="contact-form" action="https://formspree.io/f/your_formspree_id" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase font-bold text-sinamBlue tracking-widest">Full Name</label>
+                            <input type="text" name="name" required class="w-full bg-slate-50 border-b-2 border-slate-200 py-3 focus:outline-none focus:border-sinamGold text-slate-800">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] uppercase font-bold text-sinamBlue tracking-widest">Company</label>
+                            <input type="text" name="company" class="w-full bg-slate-50 border-b-2 border-slate-200 py-3 focus:outline-none focus:border-sinamGold text-slate-800">
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase font-bold text-sinamBlue tracking-widest">Email Address</label>
+                        <input type="email" name="email" required class="w-full bg-slate-50 border-b-2 border-slate-200 py-3 focus:outline-none focus:border-sinamGold text-slate-800">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase font-bold text-sinamBlue tracking-widest">Your Message</label>
+                        <textarea name="message" required rows="3" class="w-full bg-slate-50 border-b-2 border-slate-200 py-3 focus:outline-none focus:border-sinamGold text-slate-800"></textarea>
+                    </div>
+                    
+                    <button type="submit" id="submit-btn" class="w-full bg-sinamBlue text-sinamGold font-bold py-6 hover:bg-sinamBlue/90 transition-all uppercase tracking-[0.2em] flex items-center justify-center shadow-xl">
+                        <span id="btn-text">Send Inquiry</span>
+                    </button>
+                    
+                    <div id="form-status" class="hidden text-center p-4 rounded-sm font-bold text-xs uppercase tracking-widest"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#050b26] py-16 text-white/50 text-center border-t border-white/5">
+        <div class="mb-8 flex flex-col items-center">
+            <img src="Untitled(2).jpg" alt="Sinam Global" class="h-12 mb-4 opacity-80 brightness-150">
+            <p class="text-sm font-bold text-white tracking-[0.3em] uppercase">Trading • Mining • Manufacturing</p>
+        </div>
+        <div class="max-w-xl mx-auto border-t border-white/10 pt-8">
+            <p class="text-xs">&copy; 2026 Sinam Global LLC. Sultanate of Oman.</p>
+            <p class="mt-4 opacity-30 text-[9px] uppercase tracking-widest leading-loose">CR 1653124 | OCCI 2094274 | Excellent Grade Status</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementRect = target.getBoundingClientRect().top;
+                    const elementPosition = elementRect - bodyRect;
+                    const offsetPosition = elementPosition - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Contact Form Handling
+        const contactForm = document.getElementById('contact-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const statusDiv = document.getElementById('form-status');
+
+        contactForm.onsubmit = async (e) => {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            btnText.innerHTML = '<span class="spinner"></span> Processing...';
+            statusDiv.classList.add('hidden');
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    statusDiv.textContent = "INQUIRY SENT SUCCESSFULLY. WE WILL CONTACT YOU SOON.";
+                    statusDiv.className = "text-center p-4 rounded-sm font-bold text-xs uppercase tracking-widest bg-sinamGold/20 text-sinamGold border border-sinamGold/50";
+                    statusDiv.classList.remove('hidden');
+                    contactForm.reset();
+                } else {
+                    throw new Error();
+                }
+            } catch (error) {
+                statusDiv.textContent = "ERROR SENDING MESSAGE. PLEASE TRY AGAIN LATER.";
+                statusDiv.className = "text-center p-4 rounded-sm font-bold text-xs uppercase tracking-widest bg-red-900/20 text-red-400 border border-red-900/50";
+                statusDiv.classList.remove('hidden');
+            } finally {
+                submitBtn.disabled = false;
+                btnText.textContent = "Send Inquiry";
+            }
+        };
+    </script>
+</body>
+</html>
